@@ -1,0 +1,6 @@
+{
+    "name": "aikibo/praktek-wp1-c",
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    }
+}
