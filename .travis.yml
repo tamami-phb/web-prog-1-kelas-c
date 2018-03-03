@@ -6,4 +6,4 @@ env:
     - "FTP_PASSWORD=bismillah"
 
 after_success:
-  "curl -T praktek-1/index.php -u $FTP_USER:$FTP_PASSWORD ftp://files.000webhost.com"
+  "curl -T praktek-1/index.php -u $FTP_USER:$FTP_PASSWORD ftp://files.000webhost.com/public_html"
