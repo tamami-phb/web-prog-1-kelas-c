@@ -4,4 +4,4 @@ $data = array(
 );
 
 echo "data yang dipanggil " . $data[1];  
-?>
+?>  
