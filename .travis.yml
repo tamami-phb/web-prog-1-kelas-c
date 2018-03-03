@@ -5,6 +5,10 @@ env:
     - "FTP_USER=labsroom"
     - "FTP_PASSWORD=bismillah"
 
-after_success:
-  "curl -u $FTP_USER:$FTP_PASSWORD ftp://files.000webhost.com -Q 'mkd public_html/praktek-1'"
-  "curl -T praktek-1/index.php -u $FTP_USER:$FTP_PASSWORD ftp://files.000webhost.com/public_html/"
+#after_success:
+#  "curl -u $FTP_USER:$FTP_PASSWORD ftp://files.000webhost.com -Q 'mkd public_html/praktek-1'"
+#  "curl -T praktek-1/index.php -u $FTP_USER:$FTP_PASSWORD ftp://files.000webhost.com/public_html/"
+
+script:
+  - "curl -u $FTP_USER:$FTP_PASSWORD ftp://files.000webhost.com -Q 'mkd public_html/praktek-1'"
+  - "curl -T praktek-1/index.php -u $FTP_USER:$FTP_PASSWORD ftp://files.000webhost.com/public_html/praktek-1/"
