@@ -7,6 +7,7 @@
         <th>NAMA BARANG</th>
         <th>STOK</th>
     </tr>
+    
     <?php
 include "koneksi.php";
 
@@ -17,10 +18,28 @@ if($koneksi->connect_error) {
     echo "<tr><td>";
     echo "Gagal koneksi : " . $koneksi->connect_error;
     echo "</td></tr>";
-} else {
+} //else {
+//    echo "<tr><td>";
+//    echo "Sambungan basis data berhasil";
+//    echo "</td></tr>";
+//}
+
+$query = "select * from stok_barang";
+$data = $koneksi->query($query);
+if($data->num_rows <= 0) {
     echo "<tr><td>";
-    echo "Sambungan basis data berhasil";
+    echo "DATA NIHIL";
     echo "</td></tr>";
+} else {
+    while($row = $data->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row["kode"] . "</td>";
+        echo "<td>" . $row["nama_barang"] . "</td>";
+        echo "<td>" . $row["stok"] . "</td>";
+        echo "</tr>";
+    }
 }
+
+
     ?>
 </table>
